@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, whatIsGround);
                 
-        if (Input.GetMouseButton(0) && isGrounded)
+        if (/* Input.GetKeyDown(KeyCode.Space)&& isGrounded*/ Input.GetMouseButtonDown(0) )
         {
             Jump();
             jumpEvent.Invoke();
