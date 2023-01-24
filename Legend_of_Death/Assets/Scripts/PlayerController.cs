@@ -4,7 +4,8 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Stats")]
+    [Header("Player Stats")] 
+    public float speed;
     public float jumpHeight;
     private Rigidbody rb;
     private Vector2 direction;
