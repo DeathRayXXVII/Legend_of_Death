@@ -1,10 +1,12 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class TriggerEvent : MonoBehaviour
 {
-    public UnityEvent triggerEnterEvent, triggerColorEvent;
+    public UnityEvent triggerEnterEvent, triggerColorEvent, clickEvent;
     public LayerMask coin;
     public LayerMask player;
 
@@ -21,5 +23,10 @@ public class TriggerEvent : MonoBehaviour
         }
         triggerEnterEvent.Invoke();
         triggerColorEvent.Invoke();
+    }
+
+    void OnButtonClick()
+    {
+        clickEvent.Invoke();
     }
 }
