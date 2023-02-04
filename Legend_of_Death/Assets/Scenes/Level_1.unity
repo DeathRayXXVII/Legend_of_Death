@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 258047422}
   - component: {fileID: 258047421}
   - component: {fileID: 258047420}
+  - component: {fileID: 258047424}
   m_Layer: 0
   m_Name: HealthFill
   m_TagString: Untagged
@@ -674,6 +675,30 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 65e5b2b6c5ac91443a970975040faf69, type: 2}
           m_ObjectArgumentAssemblyTypeName: floatData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 65f2b022d3be73343b74546d1804078a, type: 2}
+        m_TargetAssemblyTypeName: floatData, Assembly-CSharp
+        m_MethodName: CheckMaxValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 65f2b022d3be73343b74546d1804078a, type: 2}
+        m_TargetAssemblyTypeName: floatData, Assembly-CSharp
+        m_MethodName: CheckMinValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -737,6 +762,22 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00000074506, y: 122.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &258047424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258047419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c0033bfd0101e468f5c39ba9d9e53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 0}
+  onRaiseEvnet:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &286509895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1481,6 +1522,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 65e5b2b6c5ac91443a970975040faf69, type: 2}
+        m_TargetAssemblyTypeName: floatData, Assembly-CSharp
+        m_MethodName: CheckMaxValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 65e5b2b6c5ac91443a970975040faf69, type: 2}
+        m_TargetAssemblyTypeName: floatData, Assembly-CSharp
+        m_MethodName: CheckMinValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerColorEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1849,10 +1914,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2751872286604999113, guid: a9303604d5174d2439c9dbe515a50efa, type: 3}
-      propertyPath: triggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 2751872286604999114, guid: a9303604d5174d2439c9dbe515a50efa, type: 3}
       propertyPath: m_Name
       value: Helthup (1)

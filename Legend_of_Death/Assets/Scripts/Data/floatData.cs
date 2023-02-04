@@ -21,6 +21,7 @@ public class floatData : ScriptableObject
         value += amount;
         updateValueEvent.Invoke();
     }
+    
 
     public void IncrementValue()
     {
