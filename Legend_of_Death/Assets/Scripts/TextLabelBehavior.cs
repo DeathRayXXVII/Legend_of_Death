@@ -27,5 +27,11 @@ namespace Tools.MatchingGameScripts
             label.text = obj.value.ToString(CultureInfo.InvariantCulture);
         }
 
+        public void UpdateText(StringListData obj)
+        {
+            label.text = obj.currentValue;
+            
+        }
+
     }
 }
