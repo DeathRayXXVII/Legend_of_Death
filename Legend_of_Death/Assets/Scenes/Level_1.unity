@@ -3945,7 +3945,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1124473434}
+  - component: {fileID: 1124473437}
   - component: {fileID: 1124473435}
+  - component: {fileID: 1124473436}
   m_Layer: 7
   m_Name: Weopn
   m_TagString: Untagged
@@ -3982,13 +3984,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: {fileID: 11400000, guid: 29f148252b9eb3a47aabac5b1ba65da0, type: 2}
-  attackRange: 0
-  attackRate: 0
+  attackRange: 5
+  attackRate: 5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
   wepon: {fileID: 881320723}
   marker: {fileID: 0}
+--- !u!114 &1124473436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124473433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e6e1286f242044c89849ed8da85435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerColorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  coin:
+    serializedVersion: 2
+    m_Bits: 0
+  player:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!65 &1124473437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124473433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1328939692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,7 +4673,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 10
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
