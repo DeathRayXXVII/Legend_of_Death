@@ -1,73 +1,86 @@
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, /*ITakeDamage,*/ IDie, IAttack
 {
-    [Header("Player Stats")] 
-    public float speed;
-    public float jumpHeight;
-    private Rigidbody rb;
-    private Vector2 direction;
-    public bool doubleJump;
-    public int numberOfJumps = 0;
-    public UnityEvent jumpEvent;
-    
-    
-    
-    [Header("Ground Check")]
-    public bool isGrounded;//Are we able to jump 
-    public Transform groundCheck; //Are we tuching the ground
-    public float groundCheckRadius; //Making an area to cheak ground
-    public LayerMask whatIsGround; //What is the ground
-    private float moveVelocity;
+    [Header ("Stats")]
+    public intData curHP;
+    [SerializeField] private float playerSpeed = 2.0f;
+    [SerializeField] private float jumpHeight = 1.0f;
+    [SerializeField] private float gravityValue = -9.81f;
+    public HealthBar healthBar;
+    public int damage;
+    private float lastAttackTime;
 
-    private Vector3 velocity;
-    public float gravity = -9.81f;
 
-    public bool IsGrounded
+    protected CharacterController controller;
+    protected PlayerActionsExample playerInput;
+    private Vector3 playerVelocity;
+    private bool groundedPlayer;
+
+    private void Awake()
     {
-        get => isGrounded;
-        set => isGrounded = value;
-    }
-    private void Start()
-    {
-        isGrounded = true;
-        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
+        playerInput = new PlayerActionsExample();
     }
 
     private void Update()
     {
+        groundedPlayer = controller.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
+        }
+
+        Vector2 movement = playerInput.Player.Move.ReadValue<Vector2>();
+        Vector3 move = new Vector3(movement.x, 0, movement.y);
+        controller.Move(move * Time.deltaTime * playerSpeed);
+
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+        }
+
+        // bool jumpPress = playerInput.Player.Jump.IsPressed();
+        bool jumpPress = playerInput.Player.Jump.triggered;
+        if (jumpPress && groundedPlayer)
+        {
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+        }
+
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+    }
+
+    public void Attack()
+    {
+        lastAttackTime = Time.time;
+    }
+
+    /*public void TakeDamage(intData Damage)
+    {
+        curHP -= Damage;
+        healthBar.SetHealth(curHP);
         
-    }
-
-    private void FixedUpdate()
-    {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, whatIsGround);
-                
-        /*if (  Input.GetMouseButtonDown(0) ) //Input.GetKeyDown(KeyCode.Space)&& isGrounded
+        if(curHP <= 0)
         {
-            Jump();
-            jumpEvent.Invoke();
-                    
-        }*/
-    }
-
-    public void Jump()
-    {
-        if (isGrounded)
-        {
-            numberOfJumps = 0;
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-            numberOfJumps++;
+            Die();
         }
-        else
+    }*/
+    
+    public void Die()
+    {
         {
-            if (numberOfJumps != 1) return;
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-            numberOfJumps++;
+            Debug.Log("!!Player has Died!!");
         }
-            
-        //rb.AddForce(Vector2.up * jumpHeight);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerAttack : MonoBehaviour
 {
     [Header ("Player Attack")]
@@ -21,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
         wepon.SetActive(false); //Deactivating the wepon object
         source = GetComponent<AudioSource>(); //Getting the audio source
     }
-    private void OnTriggerEnter2D (Collider2D other)
+    private void OnTriggerEnter3D (Collider other)
     {
         lastAttackTime = Time.time;
         //enemy.TakeDamage(damage);
@@ -34,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
         
         //Raycast using the enemyLayer
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, enemyLayer);
+
         if(hit.collider != null)
         {
             //hit.collider.GetComponent<EnemyController>()?.TakeDamage(damage);
