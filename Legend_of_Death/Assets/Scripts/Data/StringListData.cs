@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Single Variables/StringData")]
 public class StringListData : ScriptableObject
 {
     public List<string> value;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Single Variables/Vector3Data")]
 public class vector3Data : ScriptableObject
 {
     //making a vector 3 variable

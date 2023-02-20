@@ -1,7 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Instantiating/Instancer")]
 public class Instancers : ScriptableObject
 {
    public GameObject prefab;

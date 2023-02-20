@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, /*ITakeDamage,*/ IDie, IAttack
 {
     [Header ("Stats")]
-    public intData curHP;
+    public floatData curHP;
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
@@ -65,17 +65,6 @@ public class PlayerController : MonoBehaviour, /*ITakeDamage,*/ IDie, IAttack
     {
         lastAttackTime = Time.time;
     }
-
-    /*public void TakeDamage(intData Damage)
-    {
-        curHP -= Damage;
-        healthBar.SetHealth(curHP);
-        
-        if(curHP <= 0)
-        {
-            Die();
-        }
-    }*/
     
     public void Die()
     {

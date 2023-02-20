@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Instantiating/InstancerList")]
 public class InstancerDataList : ScriptableObject
 {
     public GameObject[] prefabList;

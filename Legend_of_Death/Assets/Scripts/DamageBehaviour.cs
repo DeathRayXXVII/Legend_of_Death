@@ -4,7 +4,7 @@ public interface IAttack
     }
 public interface ITakeDamage
     { 
-        public void TakeDamage();
+        public void TakeDamage(floatData damage);
     }
 
     public interface IDie
