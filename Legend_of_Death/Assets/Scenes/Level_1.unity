@@ -5642,6 +5642,8 @@ GameObject:
   - component: {fileID: 1395180691}
   - component: {fileID: 1395180690}
   - component: {fileID: 1395180693}
+  - component: {fileID: 1395180695}
+  - component: {fileID: 1395180694}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5709,6 +5711,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2132241340}
+--- !u!114 &1395180694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395180689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6075832411c0945af86a08d92a6994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 0
+--- !u!114 &1395180695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395180689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03379577bc953ef4ca1b002a6a59be9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreKey: {fileID: 0}
 --- !u!1 &1427404938
 GameObject:
   m_ObjectHideFlags: 0
@@ -7096,7 +7124,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1946083678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1395180694}
+        m_TargetAssemblyTypeName: ApplicationBehaviour, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1946083678
 MonoBehaviour:
   m_ObjectHideFlags: 0
