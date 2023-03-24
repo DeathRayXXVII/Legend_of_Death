@@ -5591,7 +5591,7 @@ MonoBehaviour:
   _assetName: Tree1
   _assetOpName: Riley::dev::Object/Tree::1.0
   _assetHelp: 
-  _assetID: 0
+  _assetID: -1
   _assetPath: Assets/Houdini/object_Riley.dev.Tree.1.0.hdanc
   _loadAssetFromMemory: 0
   _alwaysOverwriteOnLoad: 0
@@ -6467,6 +6467,7 @@ GameObject:
   - component: {fileID: 1395180693}
   - component: {fileID: 1395180695}
   - component: {fileID: 1395180694}
+  - component: {fileID: 1395180696}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6560,6 +6561,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreKey: {fileID: 0}
+--- !u!114 &1395180696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395180689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2beed9df8900b4da41da4fc3715a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: 
+    enemy: {fileID: 31445101}
+    count: 1
+    rate: 1
+  spawnPoints:
+  - {fileID: 132139395}
+  timeBetweenWaves: 5
 --- !u!1 &1427404938
 GameObject:
   m_ObjectHideFlags: 0
